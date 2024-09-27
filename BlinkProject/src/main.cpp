@@ -3,6 +3,9 @@
 #include <Adafruit_Sensor.h>
 #include <BluetoothSerial.h> 
 #include <Adafruit_NeoPixel.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <ArduinoJson.h>
 // WiFi credentials
 const char* ssid = "Xiaomi14Ultra";
 const char* password = "zwyzs123";
@@ -40,7 +43,6 @@ void setup() {
   SerialBT.begin("Hat_BT");
   dacWrite(SPEAKER_PIN, 0); 
 }
-
 void playStartRunningMessage() {
   for (int i = 0; i < 255; i++) {
     dacWrite(SPEAKER_PIN, i);
@@ -123,7 +125,7 @@ void loop() {
     }
   } else {
     isDark = false;
-    updateLedsWithColor();  // Show colored lights
+    updateLeds();  // Show colored lights
   }
 
   // Get acceleration data
