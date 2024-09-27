@@ -3,6 +3,13 @@
 #include <Adafruit_Sensor.h>
 #include <BluetoothSerial.h> 
 #include <Adafruit_NeoPixel.h>
+// WiFi credentials
+const char* ssid = "Xiaomi14Ultra";
+const char* password = "zwyzs123";
+
+// Gemini AI API endpoint and key
+const char* apiEndpoint = "https://generativelanguage.googleleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyBXbK9bcQSj-pLpWyoNV9dNMa9PrhSKj38";
+const char* apiKey = "AIzaSyBXbK9bcQSj-pLpWyoNV9dNMa9PrhSKj38";
 
 #define LIGHT_SENSOR_PIN_ENV 34  // Light sensor for ambient light detection
 #define LIGHT_SENSOR_PIN_HAT 35  // Light sensor for hat detection
